@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensionnement Réseau Télécom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dimensionnement </h1>
+        </header>
+        
+        <main>
+            <section id="frequency-assignment" class="card">
+                <h2>Affectation de Fréquences</h2>
+                <div class="form-group">
+                    <label for="motif">Motif:</label>
+                    <select id="motif">
+                        <option value="3">K=3</option>
+                        <option value="4">K=4</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="calculateFrequencies()">Calculer</button>
+                <div id="frequencies"></div>
+            </section>
+            
+            <section id="network-sizing" class="card">
+                <h2>Dimensionnement des Réseaux</h2>
+                <div class="form-group">
+                    <label for="area">Zone de couverture (km²):</label>
+                    <input type="number" id="area" placeholder="Ex: 1000" />
+                </div>
+                <div class="form-group">
+                    <label for="cell-size">Taille de la cellule (km²):</label>
+                    <input type="number" id="cell-size" placeholder="Ex: 10" />
+                </div>
+                <button class="btn" onclick="calculateNetworkSize()">Calculer</button>
+                <div id="network-size"></div>
+            </section>
+            
+            <section id="capacity-analysis" class="card">
+                <h2>Analyse de la Capacité</h2>
+                <div class="form-group">
+                    <label for="num-users">Nombre d'utilisateurs:</label>
+                    <input type="number" id="num-users" placeholder="Ex: 5000" />
+                </div>
+                <div class="form-group">
+                    <label for="bandwidth-per-user">Bande passante par utilisateur (Mbps):</label>
+                    <input type="number" id="bandwidth-per-user" placeholder="Ex: 2" />
+                </div>
+                <div class="form-group">
+                    <label for="total-bandwidth">Bande passante totale disponible (Mbps):</label>
+                    <input type="number" id="total-bandwidth" placeholder="Ex: 100" />
+                </div>
+                <button class="btn" onclick="calculateCapacity()">Calculer</button>
+                <div id="capacity-results"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
